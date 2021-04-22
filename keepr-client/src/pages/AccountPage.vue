@@ -1,6 +1,7 @@
 <template>
   <div class="about text-center container-fluid">
     <h1 class="row">
+      <img :src="account.picture" alt="" srcset="">
       Welcome {{ account.name }}
     </h1>
     <div class="row">

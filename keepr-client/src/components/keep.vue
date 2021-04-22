@@ -30,8 +30,9 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <div class="row">
-              {{ state.activeKeep.keeps }}
+            <div class="row justify-content-center">
+              <i class="fa fa-lock fa-2x" aria-hidden="true"></i> {{ state.activeKeep.keeps }}
+              <i class="fa fa-eye fa-sx ml-2" aria-hidden="true"></i> 0
             </div>
             <div class="row">
               {{ state.activeKeep.name }}

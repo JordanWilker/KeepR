@@ -22,16 +22,37 @@ namespace keepr.Services
       return vaults.ToList().FindAll(v => !v.isPrivate);
     }
       }
-
-      internal Vault GetById(int id)
+      internal Vault GetByIdforDelete(int id)
       {
-         Vault data = _repo.GetById(id);
+         Vault data = _repo.GetByIdforDelete(id);
          if (data == null)
          {
-            throw new Exception("Invalid Id");
+            throw new Exception("Invalid Id Yeah");
          }
          return data;
       }
+       internal Vault GetByIdYeah(int id)
+      {
+         Vault vaults = _repo.GetByIdforDelete(id);
+         if (vaults == null)
+         {
+            throw new Exception("Inval Id");
+         }
+         return vaults;
+      }
+      
+
+      internal Vault GetById(int id)
+      {
+         Vault vaults = _repo.GetById(id);
+         if (vaults == null)
+         {
+            throw new Exception("Invalidalkjad;lk Id");
+         }
+         return vaults;
+      }
+      
+
 
       internal Vault Create(Vault newVault)
       {
@@ -51,7 +72,7 @@ namespace keepr.Services
 
        internal String Delete(int id, string userId)
       {
-         Vault original = GetById(id);
+         Vault original = GetByIdforDelete(id);
          if (original.creatorId != userId) { throw new Exception("Access Denied: Cannot Delete a Vault You did not Create"); }
          _repo.Remove(id);
          return "successfully deletorted";

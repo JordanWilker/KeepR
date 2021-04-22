@@ -1,4 +1,4 @@
-<template class="container">
+<template class="container bg-dark text-light">
   <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
     <h1 class="my-1 bg-dark text-light p-1 rounded d-flex align-items-center">
       KEEPR

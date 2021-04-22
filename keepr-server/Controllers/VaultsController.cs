@@ -33,6 +33,18 @@ namespace keepr.Controllers
             return BadRequest(e.Message);
          }
       }
+      [HttpGet("{id}/yeah")]
+      public ActionResult<Vault> GetByIdYeah(int id)
+      {
+         try
+         {
+            return Ok(_service.GetByIdYeah(id));
+         }
+         catch (Exception e)
+         {
+            return BadRequest(e.Message);
+         }
+      }
 
       [HttpGet("{id}")]
       public ActionResult<Vault> GetAll(int id)

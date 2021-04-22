@@ -1,11 +1,13 @@
 <template>
   <div class="vault">
-    <div class="card" style="width: 18rem;" data-toggle="modal" data-target="#bear2" @click="getKeepsByVaultId(vault.id)">
-      <div class="card-body">
-        <h5 class="card-title">
-          {{ vault.name }}
-        </h5>
-      </div>
+    <div class="card" style="width: 18rem;" @click="getKeepsByVaultId(vault.id)">
+      <router-link :to="{ name: 'Vault', params: { id: vault.id } }">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ vault.name }}
+          </h5>
+        </div>
+      </router-link>
     </div>
   </div>
   <!-- MODAL -->

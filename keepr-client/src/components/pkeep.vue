@@ -28,8 +28,9 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <div class="row">
-              {{ state.activeKeep.keeps }}
+            <div class="row justify-content-center">
+              <i class="fa fa-lock fa-2x" aria-hidden="true"></i> {{ state.activeKeep.keeps }}
+              <i class="fa fa-eye fa-sx ml-2" aria-hidden="true"></i> 0
             </div>
             <div class="row">
               {{ state.activeKeep.name }}
@@ -78,6 +79,7 @@ import { PKeep } from '../models/PKeep'
 import { AppState } from '../AppState'
 import { keepsService } from '../services/KeepsService'
 import { vaultsService } from '../services/VaultsService'
+import $ from 'jquery'
 
 export default {
   name: 'Pkeep',
@@ -107,6 +109,12 @@ export default {
         state.newVault.vaultId = vaultId
         vaultsService.createVaultKeep(state.newVault)
         state.newVault = {}
+      },
+      deleteKeep() {
+        if (window.confirm('Are You sure')) {
+          keepsService.deleteKeep(state.activeKeep.id)
+          $('#bear1').modal('hide')
+        }
       }
     }
   },

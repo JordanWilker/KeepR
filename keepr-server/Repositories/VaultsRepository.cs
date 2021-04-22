@@ -45,6 +45,21 @@ namespace keepr.Repositories
         return Vault;
       }, new { id }, splitOn: "id").FirstOrDefault();
     }
+    internal Vault GetByIdforDelete(int id)
+       {
+      string sql = @" 
+      SELECT 
+      vault.*,
+      prof.*
+      FROM vault vault
+      JOIN profiles prof ON vault.creatorId = prof.id
+      WHERE vault.id = @id";
+      return _db.Query<Vault, Profile, Vault>(sql, (Vault, profile) =>
+      {
+        Vault.Creator = profile;
+        return Vault;
+      }, new { id }, splitOn: "id").FirstOrDefault();
+    }
 
       internal Vault Create(Vault newVault)
       {

@@ -2,6 +2,7 @@
   <div class="container-fluid">
     <div class="profile row">
       <div class="col">
+        <img :src="state.profile.picture" alt="" srcset="">
         {{ state.profile.name }}
       </div>
     </div>

@@ -33,6 +33,7 @@ class KeepsService {
     try {
       await api.delete('api/keeps/' + `${id}`)
       this.getKeeps()
+      this.getKeepsByAccountId()
     } catch (error) {
       logger.error(error)
     }

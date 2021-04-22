@@ -38,7 +38,7 @@
 --             REFERENCES profiles(id)
 --             ON DELETE CASCADE
 --     );
--- DROP TABLE
+-- TRUNCATE TABLE keep
 
 --  CREATE TABLE vaultkeep
 -- (
@@ -62,4 +62,4 @@
 
 -- )
 
--- DROP TABLE keep
+-- DROP TABLE vaultkeep
