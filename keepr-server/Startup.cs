@@ -108,6 +108,8 @@ namespace keepr_server
       app.UseAuthentication();
 
       app.UseAuthorization();
+      app.UseDefaultFiles();
+      app.UseStaticFiles();
 
       app.UseEndpoints(endpoints =>
       {

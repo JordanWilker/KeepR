@@ -1,4 +1,4 @@
-<template class="container bg-dark text-light">
+<template class="container">
   <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
     <h1 class="my-1 bg-dark text-light p-1 rounded d-flex align-items-center">
       KEEPR
@@ -6,7 +6,7 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">
       Create
     </button>
-    <div class="row">
+    <div class="row bg-dark text-light">
       <div class="col card-columns">
         <keep v-for="keep in state.keeps" :key="keep.id" :keep="keep" />
       </div>
